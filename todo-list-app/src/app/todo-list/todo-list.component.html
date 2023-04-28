@@ -1,0 +1,19 @@
+<h1>TODO List</h1>
+
+<!-- I don`t know if could be used bootstrap or something like that. But anyway this code can be better with a form of bootstrap or other ui framework such as tailwind -->
+
+<div class="filters">
+  <label>Description:</label>
+  <input type="text" [(ngModel)]="filterDescription" (input)="applyDescriptionFilter()">
+
+  <label>Priority:</label>
+  <input type="text" [(ngModel)]="filterPriority" (input)="applyPriorityFilter()">
+</div>
+
+<div class="grid-container">
+  <div class="grid-item" *ngFor="let item of filteredItems">
+    <div class="item-description">{{ item.description }}</div>
+    <div class="item-due-date">Due: {{ item.dueDate }}</div>
+    <div class="item-priority">Priority: {{ item.priority }}</div>
+  </div>
+</div>
